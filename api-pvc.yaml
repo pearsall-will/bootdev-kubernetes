@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: xxx
+spec:
+  accessModes:
+    - xxx
+  resources:
+    requests:
+      storage: xxx
+metadata:
+  name: synergychat-api-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

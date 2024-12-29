@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  labels:
+    app: synergychat-web
+  name: synergychat-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: synergychat-web
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: synergychat-web
+    spec:
+      containers:
+      - image: docker.io/bootdotdev/synergychat-web:latest
+        name: synergychat-web
+        envFrom:
+          - configMapRef:
+              name: synergychat-web-configmap
